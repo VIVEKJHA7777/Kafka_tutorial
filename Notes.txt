@@ -1,0 +1,27 @@
+Admin:-  Infrastructure made by admin...
+producer:- which produces the messages...
+consumer:- which consumes the message from the partition
+
+Then we have Topic in topic we have partition
+
+then we setup is setup by zookeeper service...
+
+To use kafka we have package Kafaka.js .....
+
+you have to run these server
+1. zookeeper
+2. kafka
+
+//for Zookeeper......
+docker run -p 2181:2181 zookeeper
+
+//for Kafka......
+
+docker run -p 9092:9092 \
+-e KAFKA_ZOOKEEPER_CONNECT=<PRIVATE_IP>:2181 \
+-e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://<PRIVATE_IP>:9092 \
+-e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
+confluentinc/cp-kafka
+
+Go to system setting ---->network---> wifi-> check the ip address  in mac...
+put that ip address in private ip....
